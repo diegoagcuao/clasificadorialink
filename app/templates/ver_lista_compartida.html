@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Lista Compartida: {{ lista.nombre }}{% endblock %}
+
+{% block content %}
+<h1 class="my-4">{{ lista.nombre }}</h1>
+<p>{{ lista.descripcion }}</p>
+
+<ul class="list-group">
+    {% for enlace in enlaces %}
+    <li class="list-group-item">
+        <a href="{{ enlace.link.enlace }}" target="_blank">{{ enlace.link.titulo }}</a>
+        <p>{{ enlace.link.categoria }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('listas.mis_listas') }}" class="btn btn-secondary mt-3">Volver a Mis Listas</a>
+{% endblock %}
