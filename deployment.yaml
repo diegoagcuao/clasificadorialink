@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clasificadorialink-deployment
+spec:
+  replicas: 1 # Puedes ajustar el número de réplicas según tus necesidades
+  selector:
+    matchLabels:
+      app: clasificadorialink
+  template:
+    metadata:
+      labels:
+        app: clasificadorialink
+    spec:
+      containers:
+        - name: clasificadorialink-container
+          image: acrproyectofinal.azurecr.io/clasificadorialink:latest
+          ports:
+            - containerPort: 8080
