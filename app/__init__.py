@@ -15,7 +15,11 @@ def create_app():
     app.config.from_object(Config)
 
     # Inicializar la base de datos y el sistema de login
+<<<<<<< HEAD
     database.init_app(app)
+=======
+    database.init_app(app)  # Cambiado a 'database'
+>>>>>>> bea17413e07e1b0f4a193a8a83213fef4bdd08ac
 
     login_manager.init_app(app)
     login_manager.login_view = 'users.login'
@@ -31,11 +35,17 @@ def create_app():
     from .routes_users import users_blueprint
     from .routes_links import links_blueprint
     from .routes_listas import listas_blueprint
+<<<<<<< HEAD
     from .routes_api import api_blueprint
+=======
+>>>>>>> bea17413e07e1b0f4a193a8a83213fef4bdd08ac
 
     app.register_blueprint(users_blueprint, url_prefix='/')
     app.register_blueprint(links_blueprint, url_prefix='/')
     app.register_blueprint(listas_blueprint, url_prefix='/')
+<<<<<<< HEAD
     app.register_blueprint(api_blueprint, url_prefix='/api')
+=======
+>>>>>>> bea17413e07e1b0f4a193a8a83213fef4bdd08ac
 
     return app
